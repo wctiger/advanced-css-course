@@ -1,0 +1,67 @@
+.section-about {
+  background-color: $color-grey-light-1;
+  padding: 25rem 0;
+  margin-top: -20vh; // 95vh(header) - 75vh(polygon)
+}
+
+.section-features {
+  margin-top: -11rem; // cover the white space created by skew
+  padding: 20rem 0;
+  background-image: linear-gradient(
+      to right bottom,
+      rgba($color-primary-light, 0.8),
+      rgba($color-primary-dark, 0.8)
+    ),
+    url(../img/nat-4.jpg);
+  background-size: cover;
+
+  transform: skewY(-7deg); // to match the heading
+
+  // *: all children
+  // > *: direct child selector
+  & > * {
+    transform: skewY(7deg); // revert the parent skew
+  }
+}
+
+.section-tours {
+  margin-top: -11rem; // cover the white space created by skew
+  background-color: $color-grey-light-1;
+  padding: 25rem 0 15rem 0;
+}
+
+.section-story {
+  padding: 15rem 0;
+  position: relative;
+}
+
+.section-book {
+  padding: 15rem 0;
+  background-image: linear-gradient(
+    to right bottom,
+    $color-primary-light,
+    $color-primary-dark
+  );
+}
+//specific to home page instead of a reusable component
+.book {
+  // give 2 values at same percentage will result in a hard cut,
+  // the angle of the cut is determined by the first angle parameter
+  background-image: linear-gradient(
+      105deg,
+      rgba($color-white, 0.9) 0%,
+      rgba($color-white, 0.9) 50%,
+      transparent 50%
+    ),
+    url(../img/nat-10.jpg);
+  background-size: 100%; // 100% == cover
+  border-radius: 3px;
+  box-shadow: 0 1.5rem 4rem rgba($color-black, 0.2);
+
+  height: 50rem;
+
+  &__form {
+    width: 50%;
+    padding: 6rem;
+  }
+}
