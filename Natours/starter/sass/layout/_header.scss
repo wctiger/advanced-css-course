@@ -1,5 +1,5 @@
 .header {
-  height: 95vh; /*view port height*/
+  height: 85vh; /*view port height*/
   background-image: linear-gradient(
       to right bottom,
       rgba($color-primary-light, 0.8),
@@ -9,7 +9,11 @@
   background-size: cover;
   background-position: top;
   position: relative;
-  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+
+  @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
+    height: 95vh;
+    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+  }
 
   @include respond(phone) {
     clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);

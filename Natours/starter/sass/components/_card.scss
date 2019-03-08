@@ -19,6 +19,7 @@
     // this makes the absolute positioned elements fit their container width, instead of adapting to its content width
     width: 100%;
     // hide back side of the element
+    -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     border-radius: 3px;
     overflow: hidden; // when images overflows this container, hide it
