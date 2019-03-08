@@ -9,4 +9,26 @@
 html {
   /*set it to default font size of browser setting - by default is 16px*/
   font-size: 62.5%; /*10px for easier 1 rem computation*/
+
+  @include respond(tab-land) {
+    //width < 1200
+    font-size: 56.25%;
+  }
+  @include respond(tab-port) {
+    //width < 900
+    font-size: 50%;
+  }
+
+  @include respond(big-desktop) {
+    font-size: 75%;
+  }
+}
+
+body {
+  padding: 3rem;
+  box-sizing: border-box;
+
+  @include respond(tab-port) {
+    padding: 0;
+  }
 }

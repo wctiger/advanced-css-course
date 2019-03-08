@@ -10,6 +10,20 @@
   transform: skewX(-12deg);
   & > * {
     transform: skewX(12deg);
+
+    @include respond(phone) {
+      transform: skewX(0);
+    }
+  }
+
+  @include respond(tab-port) {
+    width: 100%;
+    padding: 4rem;
+    padding-left: 7rem;
+  }
+
+  @include respond(phone) {
+    transform: skewX(0);
   }
 
   &__shape {
@@ -22,6 +36,10 @@
     clip-path: circle(50% at 50% 50%);
     transform: translateX(-3rem) skewX(12deg); // for floating elements it's better to use translate instead of margins
     position: relative;
+
+    @include respond(phone) {
+      transform: translateX(-3rem) skewX(0);
+    }
   }
   &__image {
     height: 100%; // as image is wider than the shape, use the height
